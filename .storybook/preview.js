@@ -1,4 +1,6 @@
 import { initialize, mswDecorator } from 'msw-storybook-addon';
+import '../styles/Stories.module.css'
+
 initialize();
 
 export const parameters = {
