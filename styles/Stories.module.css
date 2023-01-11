@@ -20,3 +20,33 @@
   border-radius: 0px var(--borderRadiusDefault) var(--borderRadiusDefault) 0px;
   /* transition: background 250ms ease-in-out, transform 150ms ease; */
 }
+.searchBarButton:hover {
+  opacity: 80%;
+}
+
+.addressContainer {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  justify-items: center;
+}
+
+.addressSection {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 300px;
+  min-width: 200px;
+}
+
+.addressLabel {
+  color: gray;
+  font-size: var(--smallerFontSize);
+}
+
+.addressValue {
+  color: black;
+  font-size: var(--biggerFontSize);
+}

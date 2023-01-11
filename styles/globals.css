@@ -2,6 +2,16 @@
   --borderRadiusDefault: 8px;
   --inputPaddingY: 10px;
   --inputPaddingX: 14px;
+  --defaultFontSize: 18px;
+  --biggerFontSize: 24px;
+  --smallerFontSize: 14px;
+
+  font-size: var(--defaultFontSize);
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
 }
 button {
   display: inline-block;
@@ -23,5 +33,5 @@ input {
 }
 
 body {
-  background-color: gray;
+  background-color: #ff33;
 }

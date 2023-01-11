@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import { SearchBar } from '../stories/SearchBar'
+import AddressDetails from '../stories/AddressDetails'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,6 +18,12 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <SearchBar ></SearchBar>
+        <AddressDetails addressData={{
+          ipAddress: "192.212.174.101",
+          location: "Brooklyn, NY, 10001",
+          timezone: "UTC -05:00",
+          isp: "SpaceX Starlink"
+        }} ></AddressDetails>
       </main>
     </>
   )

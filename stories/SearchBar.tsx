@@ -27,7 +27,7 @@ interface SearchBarProps {
  */
 export const SearchBar = ({
     size = 'large',
-    placeholderText = 'Search something...',
+    placeholderText = 'Search fro any IP address or domain',
     value,
     onClick,
     ...props
