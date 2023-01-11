@@ -1,18 +1,20 @@
+import { LatLngTuple,LatLngExpression } from 'leaflet';
 import React from 'react'
 import styles from '../styles/Stories.module.css'
 
-export type AddressData = {
+export type AddressDataType = {
     ipAddress: string;
     location: string;
     timezone: string;
     isp: string;
+    latLon: LatLngExpression | LatLngTuple
 };
 interface AddressDetailsProps {
 
     /**
      * Data to show
      */
-    address: AddressData | undefined | null;
+    address: AddressDataType | undefined | null;
 
 
 }

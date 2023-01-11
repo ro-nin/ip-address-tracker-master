@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { AddressData } from "./AddressDetails";
+import { AddressDataType } from "./AddressDetails";
 import MapView from "./MapView";
 
-const defaultAddress: AddressData = {
+const defaultAddress: AddressDataType = {
   ipAddress: "192.212.174.101",
   location: "Brooklyn, NY, 10001",
   timezone: "UTC -05:00",
   isp: "SpaceX Starlink",
+  latLon: [37.38605, -122.08385],
 };
 
 const meta: Meta<typeof MapView> = {

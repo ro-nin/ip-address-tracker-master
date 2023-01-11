@@ -3,23 +3,46 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import { SearchBar } from '../stories/SearchBar'
-import AddressDetails from '../stories/AddressDetails'
+import AddressDetails, { AddressDataType } from '../stories/AddressDetails'
 // import MapView from '../stories/MapView'
 import 'leaflet/dist/leaflet.css';
+const inter = Inter({ subsets: ['latin'] })
 
 import dynamic from 'next/dynamic'
 const DynamicMap = dynamic(() => import('../stories/MapView'), {
   ssr: false
 })
-const inter = Inter({ subsets: ['latin'] })
 
-const address = {
-  ipAddress: "192.212.174.101",
-  location: "Brooklyn, NY, 10001",
-  timezone: "UTC -05:00",
-  isp: "SpaceX Starlink"
+
+
+export async function getServerSideProps() {
+  const apiKey = process.env.GEOIP_KEY
+  const ipToLocate = '' //TODO 
+
+  //TODO move to shared util lib, needs to be called later by client
+  const geoLocateIpQuery =
+    `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ipToLocate}`
+
+  const res = await fetch(geoLocateIpQuery)
+  const data = await res.json()
+
+  const address = {
+    ipAddress: data.ip ?? "192.212.174.101",
+    location: data.location ? `${data.location.city}, ${data.location.region}, ${data.location.postalCode}` :
+      "Brooklyn, NY, 10001",
+    timezone: data.location ? `${data.location.timezone}` : "UTC -05:00",
+    isp: data.isp ?? "SpaceX Starlink",
+    latLon: data.location ? [data.location.lat, data.location.lng] : [37.38605, -122.08385]
+  }
+  //geoLocate...
+  return {
+    props: {
+      address
+    }
+  }
 }
-export default function Home() {
+
+export default function Home(props: { address: AddressDataType }) {
   return (
     <>
       <Head>
@@ -30,8 +53,8 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <SearchBar ></SearchBar>
-        <AddressDetails address={address} ></AddressDetails>
-        <DynamicMap address={address}></DynamicMap>
+        <AddressDetails address={props.address} ></AddressDetails>
+        <DynamicMap address={props.address}></DynamicMap>
       </main>
     </>
   )

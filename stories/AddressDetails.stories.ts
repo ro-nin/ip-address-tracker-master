@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import AddressDetails, { AddressData } from "./AddressDetails";
+import AddressDetails, { AddressDataType } from "./AddressDetails";
 
-const defaultAddress:AddressData = {
+const defaultAddress:AddressDataType = {
     ipAddress: "192.212.174.101",
     location: "Brooklyn, NY, 10001",
     timezone: "UTC -05:00",
