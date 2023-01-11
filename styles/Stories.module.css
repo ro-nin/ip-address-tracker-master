@@ -50,3 +50,9 @@
   color: black;
   font-size: var(--biggerFontSize);
 }
+
+.mapViewContainer {
+  height: 15rem;
+  width: 100%;
+  background: green;
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../styles/Stories.module.css'
 
-export type Address = {
+export type AddressData = {
     ipAddress: string;
     location: string;
     timezone: string;
@@ -12,11 +12,11 @@ interface AddressDetailsProps {
     /**
      * Data to show
      */
-    addressData: Address | undefined | null;
+    address: AddressData | undefined | null;
 
 
 }
-const AddressDetails = ({ addressData }: AddressDetailsProps) => {
+const AddressDetails = ({ address: addressData }: AddressDetailsProps) => {
     return (
         <div className={styles.addressContainer}>
             <div className={styles.addressSection}>

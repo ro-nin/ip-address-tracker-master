@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import AddressDetails, { Address } from "./AddressDetails";
+import AddressDetails, { AddressData } from "./AddressDetails";
 
-const defaultAddress:Address = {
+const defaultAddress:AddressData = {
     ipAddress: "192.212.174.101",
     location: "Brooklyn, NY, 10001",
     timezone: "UTC -05:00",
@@ -22,13 +22,13 @@ type Story = StoryObj<typeof AddressDetails>;
 
 export const Filled: Story = {
   args: {
-    addressData: defaultAddress
+    address: defaultAddress
   },
 };
 
 export const NoAddress: Story = {
   args: {
-    addressData: null
+    address: null
   },
 };
 export const Loading: Story = {
