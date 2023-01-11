@@ -1,5 +1,5 @@
 import { initialize, mswDecorator } from 'msw-storybook-addon';
-import '../styles/Stories.module.css'
+import '../styles/globals.css'
 
 initialize();
 
