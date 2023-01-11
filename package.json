@@ -35,8 +35,8 @@
     "msw": "^0.49.2",
     "msw-storybook-addon": "^1.6.3",
     "postcss": "^8.4.21",
-    "storybook": "^7.0.0-beta.24"
-
+    "storybook": "^7.0.0-beta.24",
+    "storybook-css-modules": "^1.0.8"
   },
   "msw": {
     "workerDirectory": "public"

@@ -32,15 +32,20 @@ export const SearchBar = ({
     onClick,
     ...props
 }: SearchBarProps) => {
+    const sizeStyle = size === 'large' ? styles.searchBarInputLarge : styles.searchBarInputSmall
     return (
-        <input
-            type="text"
-            className={styles.searchBarInput}
-            placeholder={placeholderText}
-            {...props}
-            value={value}
+        <div className={styles.searchBarContainer}>
+            <input
+                type="text"
+                className={`${styles.searchBarInput} ${sizeStyle}`}
+                placeholder={placeholderText}
+                {...props}
+                value={value}
 
-        >
-        </input>
+            />
+            <button className={styles.searchBarButton}>`{'>'}`</button>
+
+        </div>
+
     );
 };

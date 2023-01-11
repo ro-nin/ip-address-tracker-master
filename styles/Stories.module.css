@@ -1,4 +1,22 @@
 .searchBarInput {
-  border-radius: 30px;
-  background: "red";
+  flex-grow: 1;
+  border-radius: var(--borderRadiusDefault) 0px 0px var(--borderRadiusDefault);
+}
+
+.searchBarInputLarge {
+  max-width: 300px;
+}
+.searchBarInputSmall {
+  max-width: 60px;
+}
+
+.searchBarContainer {
+  display: flex;
+}
+
+.searchBarButton {
+  background-color: black;
+  color: white;
+  border-radius: 0px var(--borderRadiusDefault) var(--borderRadiusDefault) 0px;
+  /* transition: background 250ms ease-in-out, transform 150ms ease; */
 }
