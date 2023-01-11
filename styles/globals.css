@@ -8,11 +8,15 @@
 
   font-size: var(--defaultFontSize);
 
+
+
   * {
     margin: 0;
     padding: 0;
   }
 }
+
+
 button {
   display: inline-block;
   border: none;

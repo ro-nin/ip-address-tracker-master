@@ -4,9 +4,15 @@ import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import { SearchBar } from '../stories/SearchBar'
 import AddressDetails from '../stories/AddressDetails'
-import MapView from '../stories/MapView'
+// import MapView from '../stories/MapView'
+import 'leaflet/dist/leaflet.css';
 
+import dynamic from 'next/dynamic'
+const DynamicMap = dynamic(() => import('../stories/MapView'), {
+  ssr: false
+})
 const inter = Inter({ subsets: ['latin'] })
+
 const address = {
   ipAddress: "192.212.174.101",
   location: "Brooklyn, NY, 10001",
@@ -25,7 +31,7 @@ export default function Home() {
       <main className={styles.main}>
         <SearchBar ></SearchBar>
         <AddressDetails address={address} ></AddressDetails>
-        <MapView address={address}></MapView>
+        <DynamicMap address={address}></DynamicMap>
       </main>
     </>
   )
