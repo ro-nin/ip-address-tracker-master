@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { AddressDataType } from "./AddressDetails";
 import TrackerPage from "./TrackerPage";
+import { rest } from "msw";
 
 const defaultAddress: AddressDataType = {
   ipAddress: "192.212.174.101",
@@ -25,9 +26,18 @@ export const WithAddress: Story = {
     initialAddress: defaultAddress,
   },
 };
-export const FailedInitialGeolocation: Story = {
+export const UnreachableGeolocAPI: Story = {
   args: {
     initialAddress: null,
+  },
+  parameters: {
+    msw: {
+      handlers: [
+        rest.get(/^(https:\/\/geo\.ipify\.org)/, (req, res, ctx) => {
+          return res(ctx.status(403));
+        }),
+      ],
+    },
   },
 };
 

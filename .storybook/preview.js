@@ -1,7 +1,11 @@
 import { initialize, mswDecorator } from 'msw-storybook-addon';
 import '../styles/globals.css'
 
-initialize();
+initialize({
+  serviceWorker: {
+    url: 'http://localhost:6006/mockServiceWorker.js'
+  }
+});
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -12,9 +16,4 @@ export const parameters = {
     },
   },
 }
-export const decorators = [
-  (Story) => (
-    <Story />
-  ),
-  mswDecorator,
-];
+export const decorators = [mswDecorator];
