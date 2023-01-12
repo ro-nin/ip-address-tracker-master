@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AddressDataType } from './AddressDetails'
 import styles from '../styles/Stories.module.css'
 import 'leaflet/dist/leaflet.css';
@@ -14,7 +14,8 @@ const MapView = ({ address, }: MapProps) => {
     return (
         <div className={styles.mapViewContainer}>
             {!address?.ipAddress ?? 'no address'}
-            <MapContainer style={{ height: '100%', width: '100%' }}
+            {/* if key is not provided, the map won't update */}
+            <MapContainer key={JSON.stringify(address)} style={{ height: '100%', width: '100%' }}
                 center={address?.latLon ?? [0, 0]} zoom={11} scrollWheelZoom={false}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -25,6 +26,7 @@ const MapView = ({ address, }: MapProps) => {
                         A pretty CSS3 popup. <br /> Easily customizable.
                     </Popup>
                 </Marker>
+                {/* <ChangeMapView key={'we'} coords={address?.latLon} /> */}
             </MapContainer>
         </div>
     )

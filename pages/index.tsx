@@ -2,15 +2,14 @@ import Head from 'next/head'
 
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-import { SearchBar } from '../stories/SearchBar'
-import AddressDetails, { AddressDataType } from '../stories/AddressDetails'
+import { AddressDataType } from '../stories/AddressDetails'
 import 'leaflet/dist/leaflet.css';
 
 const inter = Inter({ subsets: ['latin'] })
 
 import dynamic from 'next/dynamic'
 import geolocateAddress from '../sharedLogic/geolocate'
-const DynamicMap = dynamic(() => import('../stories/MapView'), {
+const DynamicMap = dynamic(() => import('../stories/TrackerPage'), {
   ssr: false
 })
 
@@ -38,9 +37,7 @@ export default function Home(props: { address: AddressDataType }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <SearchBar ></SearchBar>
-        <AddressDetails address={props.address} ></AddressDetails>
-        <DynamicMap address={props.address}></DynamicMap>
+        <DynamicMap initialAddress={props.address} />
       </main>
     </>
   )

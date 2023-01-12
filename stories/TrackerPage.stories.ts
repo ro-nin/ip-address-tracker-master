@@ -22,17 +22,17 @@ type Story = StoryObj<typeof TrackerPage>;
 
 export const WithAddress: Story = {
   args: {
-    address: defaultAddress,
+    initialAddress: defaultAddress,
   },
 };
 export const FailedInitialGeolocation: Story = {
   args: {
-    address: null,
+    initialAddress: null,
   },
 };
 
 export const PendingGeolocation: Story = {
   args: {
-    address: undefined,
+    initialAddress: undefined,
   },
 };

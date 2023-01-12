@@ -17,9 +17,13 @@ interface SearchBarProps {
      */
     value?: string;
     /**
-     * Optional click handler
+     * Optional click handler, to make it controller
      */
     onClick?: () => void;
+    /**
+     * Optional change handler, to make it controller
+     */
+    handleChange?: (arg0: string) => void;
 }
 
 /**
@@ -29,7 +33,7 @@ export const SearchBar = ({
     size = 'large',
     placeholderText = 'Search fro any IP address or domain',
     value,
-    onClick,
+    onClick, handleChange,
     ...props
 }: SearchBarProps) => {
     const sizeStyle = size === 'large' ? styles.searchBarInputLarge : styles.searchBarInputSmall
@@ -39,11 +43,11 @@ export const SearchBar = ({
                 type="text"
                 className={`${styles.searchBarInput} ${sizeStyle}`}
                 placeholder={placeholderText}
-                {...props}
                 value={value}
-
+                onChange={event => handleChange ? handleChange(event.target.value) : {}}
+                {...props}
             />
-            <button className={styles.searchBarButton}>`{'>'}`</button>
+            <button onClick={() => onClick ? onClick() : {}} className={styles.searchBarButton}>{">"}</button>
 
         </div>
 
