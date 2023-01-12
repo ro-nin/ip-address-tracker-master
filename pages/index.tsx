@@ -1,14 +1,15 @@
 import Head from 'next/head'
-import Image from 'next/image'
+
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import { SearchBar } from '../stories/SearchBar'
 import AddressDetails, { AddressDataType } from '../stories/AddressDetails'
-// import MapView from '../stories/MapView'
 import 'leaflet/dist/leaflet.css';
+
 const inter = Inter({ subsets: ['latin'] })
 
 import dynamic from 'next/dynamic'
+import geolocateAddress from '../sharedLogic/geolocate'
 const DynamicMap = dynamic(() => import('../stories/MapView'), {
   ssr: false
 })
@@ -16,30 +17,15 @@ const DynamicMap = dynamic(() => import('../stories/MapView'), {
 
 
 export async function getServerSideProps() {
-  const apiKey = process.env.GEOIP_KEY
-  const ipToLocate = '' //TODO 
-
-  //TODO move to shared util lib, needs to be called later by client
-  const geoLocateIpQuery =
-    `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ipToLocate}`
-
-  const res = await fetch(geoLocateIpQuery)
-  const data = await res.json()
-
-  const address = {
-    ipAddress: data.ip ?? "192.212.174.101",
-    location: data.location ? `${data.location.city}, ${data.location.region}, ${data.location.postalCode}` :
-      "Brooklyn, NY, 10001",
-    timezone: data.location ? `${data.location.timezone}` : "UTC -05:00",
-    isp: data.isp ?? "SpaceX Starlink",
-    latLon: data.location ? [data.location.lat, data.location.lng] : [37.38605, -122.08385]
-  }
-  //geoLocate...
+  //first access, run on server
+  const address = await geolocateAddress()
   return {
     props: {
       address
     }
   }
+
+
 }
 
 export default function Home(props: { address: AddressDataType }) {
