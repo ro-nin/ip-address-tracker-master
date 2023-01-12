@@ -34,7 +34,7 @@ export const UnreachableGeolocAPI: Story = {
     msw: {
       handlers: [
         rest.get(/^(https:\/\/geo\.ipify\.org)/, (req, res, ctx) => {
-          return res(ctx.status(403));
+          return res(ctx.status(500));
         }),
       ],
     },

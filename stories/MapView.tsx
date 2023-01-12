@@ -15,7 +15,7 @@ const MapView = ({ address, }: MapProps) => {
         <div className={styles.mapViewContainer}>
             {!address?.ipAddress ?? 'no address'}
             {/* if key is not provided, the map won't update */}
-            <MapContainer key={JSON.stringify(address)} style={{ height: '100%', width: '100%' }}
+            <MapContainer key={JSON.stringify(address)} style={{ height: '100%', zIndex: '1', width: '100%' }}
                 center={address?.latLon ?? [0, 0]} zoom={11} scrollWheelZoom={false}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

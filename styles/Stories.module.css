@@ -7,11 +7,13 @@
   max-width: 300px;
 }
 .searchBarInputSmall {
-  max-width: 100px;
+  max-width: 150px;
 }
 
 .searchBarContainer {
   display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .searchBarButton {
@@ -26,19 +28,34 @@
 
 .addressContainer {
   display: flex;
-  flex-grow: 1;
   flex-direction: row;
   justify-items: center;
+  background: white;
+  border-radius: var(--borderRadiusDefault);
+  max-width: 75%;
+  flex-grow: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .addressContainer {
+    flex-direction: column;
+  }
 }
 
 .addressSection {
   display: flex;
   flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  flex-grow: 1;
-  max-width: 300px;
-  min-width: 200px;
+  justify-content: center;
+  align-items: start;
+  padding: 2em 0.5em 2em 0.5em;
+  text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+  .addressSection {
+    padding: 1em 1em 1em 1em;
+    align-items: center;
+  }
 }
 
 .addressLabel {
@@ -53,8 +70,35 @@
 
 .mapViewContainer {
   height: 400px;
-  width: 100vw;
+  /* width: 100vw; */
   background: green;
   display: flex;
   flex-grow: 1;
+  z-index: 1;
+}
+
+.topoBGContainer {
+  height: 12rem;
+  background-image: url("/pattern-bg.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.topoBGContainer h1 {
+  color: white;
+  font-size: var(--defaultFontSize);
+  margin-top: 1.5rem;
+}
+
+.overlayContainer {
+  position: absolute;
+  top: 4rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
 }

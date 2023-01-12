@@ -7,15 +7,12 @@
   --smallerFontSize: 14px;
 
   font-size: var(--defaultFontSize);
-
-
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
 
 button {
   display: inline-block;
