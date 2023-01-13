@@ -28,34 +28,52 @@
 }
 
 .addressContainer {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-items: center;
+  justify-items: center; */
+  display: grid;
   background: white;
   border-radius: var(--borderRadiusDefault);
-  max-width: 75%;
-  flex-grow: 1;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 501px) {
   .addressContainer {
-    flex-direction: column;
+    grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr;
+    grid-template-rows: 1;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .addressContainer {
+    grid-template-columns: 1;
+    grid-template-rows: repeat(4, 1fr);
   }
 }
 
 .addressSection {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* align-items: start; */
-  padding: 2em 0.5em 2em 0.5em;
+  justify-content: start;
+  gap: 0.5em;
+  padding: 2em ;
   text-align: left;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
   .addressSection {
     padding: 1em 1em 1em 1em;
     align-items: center;
+  }
+}
+@media only screen and (min-width: 501px) {
+  .separator {
+    display: inline;
+    margin: 2.5em 0;
+    border: 1px solid lightgray;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .separator {
+    display: none;
   }
 }
 

@@ -1,4 +1,4 @@
-import { LatLngTuple,LatLngExpression } from 'leaflet';
+import { LatLngTuple, LatLngExpression } from 'leaflet';
 import React from 'react'
 import styles from '../styles/Stories.module.css'
 
@@ -28,6 +28,7 @@ const AddressDetails = ({ address: addressData }: AddressDetailsProps) => {
                 <p className={styles.addressValue}>
                     {addressData === null ? '/' : addressData === undefined ? 'searching' : addressData.ipAddress}</p>
             </div>
+            <div className={styles.separator}></div>
             <div className={styles.addressSection}>
                 <p className={styles.addressLabel}>
                     LOCATION
@@ -36,6 +37,7 @@ const AddressDetails = ({ address: addressData }: AddressDetailsProps) => {
                     {addressData?.location}
                 </p>
             </div>
+            <div className={styles.separator}></div>
             <div className={styles.addressSection}>
                 <p className={styles.addressLabel}>
                     TIMEZONE
@@ -44,6 +46,7 @@ const AddressDetails = ({ address: addressData }: AddressDetailsProps) => {
                     {addressData?.timezone}
                 </p>
             </div>
+            <div className={styles.separator}></div>
             <div className={styles.addressSection}>
                 <p className={styles.addressLabel}>
                     ISP
