@@ -27,9 +27,13 @@ export const WithAddress: Story = {
   args: {
     initialAddress: defaultAddress,
   },
-  // play: async ({ canvasElement }) => {
-  //   const canvas = within(canvasElement); //error causing line
-  // },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement); //error causing line
+    console.log(canvas);
+    await userEvent.type(canvas.getByTestId("inputText"), "111.111.111.111");
+    await userEvent.click(canvas.getByTestId("button"));
+    await expect(canvas.getByText("Tokyo")).toBeInTheDocument();
+  },
 };
 
 export const UnreachableGeolocAPI: Story = {

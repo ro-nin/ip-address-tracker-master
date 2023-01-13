@@ -49,6 +49,7 @@ export const SearchBar = ({
         <form className={styles.searchBarContainer}>
             <input
                 id='searchBarInput'
+                data-testid="inputText"
                 type="text"
                 className={`${styles.searchBarInput} ${sizeStyle}`}
                 placeholder={placeholderText}
@@ -57,7 +58,7 @@ export const SearchBar = ({
                 onChange={event => handleChange ? handleChange(event.target.value) : {}}
                 {...props}
             />
-            <button aria-label="Search" id='confirmSearchButton' onClick={(event) => buttonClick(onClick, event)} className={styles.searchBarButton}>{">"}</button>
+            <button data-testid="button" aria-label="Search" id='confirmSearchButton' onClick={(event) => buttonClick(onClick, event)} className={styles.searchBarButton}>{">"}</button>
 
         </form>
 
