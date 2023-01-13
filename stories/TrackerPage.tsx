@@ -6,9 +6,15 @@ import { SearchBar } from './SearchBar'
 import styles from '../styles/Stories.module.css'
 
 interface TrackerPageProps {
+    /**
+     * Address given by the server on first load
+     */
     initialAddress: AddressDataType | null
 }
 
+/**
+ * Page collecting all the elements for a geolocation
+ */
 const TrackerPage = ({ initialAddress }: TrackerPageProps) => {
 
     const triggerGeolocation = async () => {

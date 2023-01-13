@@ -12,12 +12,15 @@ export type AddressDataType = {
 interface AddressDetailsProps {
 
     /**
-     * Data to show
+     * Address data to show
      */
     address: AddressDataType | undefined | null;
 
 
 }
+/**
+ * A container for the address various parts
+ */
 const AddressDetails = ({ address: addressData }: AddressDetailsProps) => {
     return (
         <div className={styles.addressContainer}>

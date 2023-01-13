@@ -41,6 +41,7 @@
 .searchBarContainer {
   display: flex;
   width: 100%;
+  max-width: 80vw;
   justify-content: center;
 }
 
@@ -61,13 +62,13 @@
   max-width: 80vw;
 }
 
-@media only screen and (min-width: 501px) {
+@media only screen and (min-width: 1000px) {
   .addressContainer {
     grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr;
     grid-template-rows: 1;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1000px) {
   .addressContainer {
     grid-template-columns: 1;
     grid-template-rows: repeat(4, 1fr);
@@ -78,25 +79,30 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-start;
   gap: 0.5em;
   padding: 2em;
   text-align: left;
+  min-width: 8em;
+  max-width: 16em;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1000px) {
   .addressSection {
-    padding: 1em 3em 1em 3em;
+    padding: 0.6em 3em;
     align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 }
-@media only screen and (min-width: 501px) {
+@media only screen and (min-width: 1001px) {
   .separator {
     display: inline;
     margin: 2.5em 0;
     border: 1px solid lightgray;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1000px) {
   .separator {
     display: none;
   }
@@ -104,7 +110,7 @@
 
 .addressLabel,
 .addressValue {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .addressLabel {
@@ -117,7 +123,7 @@
   font-size: var(--biggerFontSize);
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1000px) {
   .addressLabel {
     font-size: 0.5rem;
   }
