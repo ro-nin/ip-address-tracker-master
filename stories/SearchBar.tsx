@@ -37,20 +37,29 @@ export const SearchBar = ({
     ...props
 }: SearchBarProps) => {
     const sizeStyle = size === 'large' ? styles.searchBarInputLarge : styles.searchBarInputSmall
+
+    function buttonClick(action: (() => void) | undefined, event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+        event.preventDefault()
+        if (action) action()
+        else console.log('clicked!')
+        return;
+    }
+
     return (
-        <div className={styles.searchBarContainer}>
+        <form className={styles.searchBarContainer}>
             <input
+                id='searchBarInput'
                 type="text"
                 className={`${styles.searchBarInput} ${sizeStyle}`}
                 placeholder={placeholderText}
                 // enable controlled field 
-                value={handleChange ? value ?? '' : undefined}
+                value={value ?? (handleChange ? '' : undefined)}
                 onChange={event => handleChange ? handleChange(event.target.value) : {}}
                 {...props}
             />
-            <button onClick={() => onClick ? onClick() : {}} className={styles.searchBarButton}>{">"}</button>
+            <button aria-label="Search" id='confirmSearchButton' onClick={(event) => buttonClick(onClick, event)} className={styles.searchBarButton}>{">"}</button>
 
-        </div>
+        </form>
 
     );
 };

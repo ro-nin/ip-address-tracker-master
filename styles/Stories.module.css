@@ -1,5 +1,6 @@
 .searchBarInput {
   flex-grow: 1;
+  border: solid 1px black;
   border-radius: var(--borderRadiusDefault) 0px 0px var(--borderRadiusDefault);
 }
 
