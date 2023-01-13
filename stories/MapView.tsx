@@ -6,6 +6,9 @@ import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet'
 interface MapProps {
+    /**
+     * Addres information to populate the map
+     */
     address: AddressDataType | undefined | null;
 }
 

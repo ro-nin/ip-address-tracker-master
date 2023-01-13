@@ -6,9 +6,15 @@ import { SearchBar } from './SearchBar'
 import styles from '../styles/Stories.module.css'
 
 interface TrackerPageProps {
+    /**
+     * Address given by the server on first load
+     */
     initialAddress: AddressDataType | null
 }
 
+/**
+ * Page collecting all the elements for a geolocation
+ */
 const TrackerPage = ({ initialAddress }: TrackerPageProps) => {
 
     const triggerGeolocation = async () => {
@@ -22,7 +28,7 @@ const TrackerPage = ({ initialAddress }: TrackerPageProps) => {
 
     return (
         <>
-            <div style={{ display: 'flex', flexDirection: 'column', position: 'relative', width: '100vw', height: '100vh' }}>
+            <div style={{ justifyContent: 'center', display: 'flex', flexDirection: 'column', position: 'relative', width: '100vw', height: '100vh' }}>
                 <div className={styles.topoBGContainer}>
                     <h1>IP Addres Tracker</h1>
                 </div>

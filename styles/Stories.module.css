@@ -1,83 +1,3 @@
-.searchBarInput {
-  flex-grow: 1;
-  border: solid 1px black;
-  border-radius: var(--borderRadiusDefault) 0px 0px var(--borderRadiusDefault);
-}
-
-.searchBarInputLarge {
-  max-width: 300px;
-}
-.searchBarInputSmall {
-  max-width: 150px;
-}
-
-.searchBarContainer {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.searchBarButton {
-  background-color: black;
-  color: white;
-  border-radius: 0px var(--borderRadiusDefault) var(--borderRadiusDefault) 0px;
-  /* transition: background 250ms ease-in-out, transform 150ms ease; */
-}
-.searchBarButton:hover {
-  opacity: 80%;
-}
-
-.addressContainer {
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
-  background: white;
-  border-radius: var(--borderRadiusDefault);
-  max-width: 75%;
-  flex-grow: 1;
-}
-
-@media only screen and (max-width: 600px) {
-  .addressContainer {
-    flex-direction: column;
-  }
-}
-
-.addressSection {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* align-items: start; */
-  padding: 2em 0.5em 2em 0.5em;
-  text-align: left;
-}
-
-@media only screen and (max-width: 600px) {
-  .addressSection {
-    padding: 1em 1em 1em 1em;
-    align-items: center;
-  }
-}
-
-.addressLabel {
-  color: gray;
-  font-size: var(--smallerFontSize);
-}
-
-.addressValue {
-  color: black;
-  font-size: var(--biggerFontSize);
-}
-
-.mapViewContainer {
-  height: 400px;
-  /* width: 100vw; */
-  background: green;
-  display: flex;
-  flex-grow: 1;
-  z-index: 1;
-}
-
 .topoBGContainer {
   height: 12rem;
   background-image: url("/pattern-bg.png");
@@ -94,12 +14,130 @@
 
 .overlayContainer {
   position: absolute;
-  top: 4rem;
+  top: 5rem;
   display: flex;
   flex-direction: column;
   z-index: 100;
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-height: 40vh;
   gap: 1rem;
+}
+
+.searchBarInput {
+  flex-grow: 1;
+  border: solid 1px black;
+  border-radius: var(--borderRadiusDefault) 0px 0px var(--borderRadiusDefault);
+}
+
+.searchBarInputLarge {
+  max-width: 300px;
+}
+.searchBarInputSmall {
+  max-width: 150px;
+}
+
+.searchBarContainer {
+  display: flex;
+  width: 100%;
+  max-width: 80vw;
+  justify-content: center;
+}
+
+.searchBarButton {
+  background-color: black;
+  color: white;
+  border-radius: 0px var(--borderRadiusDefault) var(--borderRadiusDefault) 0px;
+  /* transition: background 250ms ease-in-out, transform 150ms ease; */
+}
+.searchBarButton:hover {
+  opacity: 80%;
+}
+
+.addressContainer {
+  display: grid;
+  background: white;
+  border-radius: var(--borderRadiusDefault);
+  max-width: 80vw;
+}
+
+@media only screen and (min-width: 1000px) {
+  .addressContainer {
+    grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr;
+    grid-template-rows: 1;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .addressContainer {
+    grid-template-columns: 1;
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+.addressSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5em;
+  padding: 2em;
+  text-align: left;
+  min-width: 8em;
+  max-width: 16em;
+}
+
+@media only screen and (max-width: 1000px) {
+  .addressSection {
+    padding: 0.6em 3em;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 1001px) {
+  .separator {
+    display: inline;
+    margin: 2.5em 0;
+    border: 1px solid lightgray;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .separator {
+    display: none;
+  }
+}
+
+.addressLabel,
+.addressValue {
+  font-weight: 500;
+}
+
+.addressLabel {
+  color: gray;
+  font-size: var(--smallerFontSize);
+}
+
+.addressValue {
+  color: black;
+  font-size: var(--biggerFontSize);
+}
+
+@media only screen and (max-width: 1000px) {
+  .addressLabel {
+    font-size: 0.5rem;
+  }
+
+  .addressValue {
+    font-size: 1rem;
+  }
+}
+
+.mapViewContainer {
+  height: 400px;
+  /* width: 100vw; */
+  background: green;
+  display: flex;
+  flex-grow: 1;
+  z-index: 1;
 }
