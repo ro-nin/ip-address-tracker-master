@@ -1,11 +1,12 @@
 import Head from 'next/head'
 
-import { Inter } from '@next/font/google'
+// import { Rubik } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import { AddressDataType } from '../stories/AddressDetails'
 import 'leaflet/dist/leaflet.css';
 
-const inter = Inter({ subsets: ['latin'] })
+// not used, use css to provide font also to storybook
+// const rubik = Rubik({ subsets: ['latin'] })
 
 import dynamic from 'next/dynamic'
 import geolocateAddress from '../sharedLogic/geolocate'

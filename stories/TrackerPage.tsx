@@ -22,7 +22,7 @@ const TrackerPage = ({ initialAddress }: TrackerPageProps) => {
 
     return (
         <>
-            <div style={{ display: 'flex', flexDirection: 'column', position: 'relative', width: '100vw', height: '100vh' }}>
+            <div style={{ justifyContent: 'center', display: 'flex', flexDirection: 'column', position: 'relative', width: '100vw', height: '100vh' }}>
                 <div className={styles.topoBGContainer}>
                     <h1>IP Addres Tracker</h1>
                 </div>

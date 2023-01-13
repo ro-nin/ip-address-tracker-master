@@ -22,35 +22,35 @@ const AddressDetails = ({ address: addressData }: AddressDetailsProps) => {
     return (
         <div className={styles.addressContainer}>
             <div className={styles.addressSection}>
-                <p className={styles.addressLabel}>
+                <label className={styles.addressLabel}>
                     IP ADRRESS
-                </p>
+                </label>
                 <p className={styles.addressValue}>
                     {addressData === null ? '/' : addressData === undefined ? 'searching' : addressData.ipAddress}</p>
             </div>
             <div className={styles.separator}></div>
             <div className={styles.addressSection}>
-                <p className={styles.addressLabel}>
+                <label className={styles.addressLabel}>
                     LOCATION
-                </p>
+                </label>
                 <p className={styles.addressValue}>
                     {addressData?.location}
                 </p>
             </div>
             <div className={styles.separator}></div>
             <div className={styles.addressSection}>
-                <p className={styles.addressLabel}>
+                <label className={styles.addressLabel}>
                     TIMEZONE
-                </p>
+                </label>
                 <p className={styles.addressValue}>
                     {addressData?.timezone}
                 </p>
             </div>
             <div className={styles.separator}></div>
             <div className={styles.addressSection}>
-                <p className={styles.addressLabel}>
+                <label className={styles.addressLabel}>
                     ISP
-                </p>
+                </label>
                 <p className={styles.addressValue}>
                     {addressData?.isp}
                 </p>

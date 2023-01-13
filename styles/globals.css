@@ -1,10 +1,10 @@
 :root {
-  --borderRadiusDefault: 8px;
-  --inputPaddingY: 10px;
-  --inputPaddingX: 14px;
-  --defaultFontSize: 18px;
-  --biggerFontSize: 24px;
-  --smallerFontSize: 14px;
+  --borderRadiusDefault: 0.5rem;
+  --inputPaddingY: 0.63rem;
+  --inputPaddingX: 0.88rem;
+  --defaultFontSize: 1.13rem;
+  --biggerFontSize: 1.5rem;
+  --smallerFontSize: 0.88rem;
 
   font-size: var(--defaultFontSize);
 }

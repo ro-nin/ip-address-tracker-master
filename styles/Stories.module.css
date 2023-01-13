@@ -1,3 +1,30 @@
+.topoBGContainer {
+  height: 12rem;
+  background-image: url("/pattern-bg.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.topoBGContainer h1 {
+  color: white;
+  font-size: var(--defaultFontSize);
+  margin-top: 1.5rem;
+}
+
+.overlayContainer {
+  position: absolute;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 40vh;
+  gap: 1rem;
+}
+
 .searchBarInput {
   flex-grow: 1;
   border: solid 1px black;
@@ -28,12 +55,10 @@
 }
 
 .addressContainer {
-  /* display: flex;
-  flex-direction: row;
-  justify-items: center; */
   display: grid;
   background: white;
   border-radius: var(--borderRadiusDefault);
+  max-width: 80vw;
 }
 
 @media only screen and (min-width: 501px) {
@@ -52,15 +77,15 @@
 .addressSection {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 0.5em;
-  padding: 2em ;
+  padding: 2em;
   text-align: left;
 }
 
 @media only screen and (max-width: 500px) {
   .addressSection {
-    padding: 1em 1em 1em 1em;
+    padding: 1em 3em 1em 3em;
     align-items: center;
   }
 }
@@ -77,6 +102,11 @@
   }
 }
 
+.addressLabel,
+.addressValue {
+  font-weight: bold;
+}
+
 .addressLabel {
   color: gray;
   font-size: var(--smallerFontSize);
@@ -87,6 +117,16 @@
   font-size: var(--biggerFontSize);
 }
 
+@media only screen and (max-width: 500px) {
+  .addressLabel {
+    font-size: 0.5rem;
+  }
+
+  .addressValue {
+    font-size: 1rem;
+  }
+}
+
 .mapViewContainer {
   height: 400px;
   /* width: 100vw; */
@@ -94,30 +134,4 @@
   display: flex;
   flex-grow: 1;
   z-index: 1;
-}
-
-.topoBGContainer {
-  height: 12rem;
-  background-image: url("/pattern-bg.png");
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-}
-
-.topoBGContainer h1 {
-  color: white;
-  font-size: var(--defaultFontSize);
-  margin-top: 1.5rem;
-}
-
-.overlayContainer {
-  position: absolute;
-  top: 4rem;
-  display: flex;
-  flex-direction: column;
-  z-index: 100;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 1rem;
 }
