@@ -9,7 +9,7 @@ import 'leaflet/dist/leaflet.css';
 // const rubik = Rubik({ subsets: ['latin'] })
 
 import dynamic from 'next/dynamic'
-import geolocateAddress from '../sharedLogic/geolocate'
+import geolocateAddress, { GeoLocResultType } from '../sharedLogic/geolocate'
 const DynamicMap = dynamic(() => import('../stories/TrackerPage'), {
   ssr: false
 })
@@ -18,17 +18,18 @@ const DynamicMap = dynamic(() => import('../stories/TrackerPage'), {
 
 export async function getServerSideProps() {
   //first access, run on server
-  const address = await geolocateAddress()
+  const dataFromServer = await geolocateAddress()
   return {
     props: {
-      address
+      dataFromServer
     }
   }
 
 
 }
 
-export default function Home(props: { address: AddressDataType }) {
+export default function Home(props: { dataFromServer: GeoLocResultType }) {
+  // console.log(props.dataFromServer,'datafromserve')
   return (
     <>
       <Head>
@@ -38,7 +39,7 @@ export default function Home(props: { address: AddressDataType }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main >
-        <DynamicMap initialAddress={props.address} />
+        <DynamicMap initialAddress={props.dataFromServer} />
       </main>
     </>
   )

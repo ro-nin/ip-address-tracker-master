@@ -14,7 +14,7 @@
 
 .overlayContainer {
   position: absolute;
-  top: 5rem;
+  top: 6rem;
   display: flex;
   flex-direction: column;
   z-index: 100;
@@ -22,7 +22,7 @@
   align-items: center;
   width: 100%;
   max-height: 40vh;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 
 .searchBarInput {
@@ -140,4 +140,16 @@
   display: flex;
   flex-grow: 1;
   z-index: 1;
+}
+
+.errorContainer {
+  background-color: white;
+  padding: 0 1em;
+  border-radius: var(--borderRadiusDefault);
+}
+
+.errorContainer > * {
+  color: red;
+  font-size: 0.8em;
+  display: inline;
 }

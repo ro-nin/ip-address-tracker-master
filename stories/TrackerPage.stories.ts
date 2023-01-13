@@ -4,13 +4,16 @@ import TrackerPage from "./TrackerPage";
 import { rest } from "msw";
 import { within, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
+import { GeoLocResultType } from "../sharedLogic/geolocate";
 
-const defaultAddress: AddressDataType = {
-  ipAddress: "192.212.174.101",
-  location: "Brooklyn, NY, 10001",
-  timezone: "UTC -05:00",
-  isp: "SpaceX Starlink",
-  latLon: [37.38605, -122.08385],
+const defaultAddress: GeoLocResultType = {
+  address: {
+    ipAddress: "192.212.174.101",
+    location: "Brooklyn, NY, 10001",
+    timezone: "UTC -05:00",
+    isp: "SpaceX Starlink",
+    latLon: [37.38605, -122.08385],
+  },
 };
 const meta: Meta<typeof TrackerPage> = {
   title: "TrackerPage",
@@ -31,7 +34,7 @@ export const WithAddress: Story = {
 
 export const UnreachableGeolocAPI: Story = {
   args: {
-    initialAddress: null,
+    initialAddress: { error: { code: "500", message: "mocked error" } },
   },
   parameters: {
     msw: {
@@ -45,6 +48,6 @@ export const UnreachableGeolocAPI: Story = {
 };
 export const PendingGeolocation: Story = {
   args: {
-    initialAddress: undefined,
+    initialAddress: {},
   },
 };
