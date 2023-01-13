@@ -13,15 +13,15 @@ interface SearchBarProps {
      */
     placeholderText?: string;
     /**
-     * text being inputed
+     * text being inputed, to make it controlled
      */
     value?: string;
     /**
-     * Optional click handler, to make it controller
+     * Optional click handler
      */
     onClick?: () => void;
     /**
-     * Optional change handler, to make it controller
+     * Optional change handler, to make it controlled
      */
     handleChange?: (arg0: string) => void;
 }
@@ -43,7 +43,8 @@ export const SearchBar = ({
                 type="text"
                 className={`${styles.searchBarInput} ${sizeStyle}`}
                 placeholder={placeholderText}
-                value={value}
+                // enable controlled field 
+                value={handleChange ? value ?? '' : undefined}
                 onChange={event => handleChange ? handleChange(event.target.value) : {}}
                 {...props}
             />

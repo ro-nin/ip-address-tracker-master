@@ -16,14 +16,14 @@ export default meta;
 type Story = StoryObj<typeof SearchBar>;
 
 // More on writing stories with args: https://storybook.js.org/docs/7.0/react/writing-stories/args
-export const Default: Story = {
+export const WithoutText: Story = {
   args: {
     value: "",
     // placeholderText: "Default Story Placeholder...",
   },
 };
 
-export const Secondary: Story = {
+export const WithText: Story = {
   args: {
     value: "Some Text Inserted",
   },

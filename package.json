@@ -29,7 +29,8 @@
     ]
   },
   "resolutions": {
-    "webpack": "5"
+    "webpack": "5",
+    "@storybook/instrumenter": "7.0.0-beta.25"
   },
   "dependencies": {
     "@next/font": "13.1.1",
@@ -47,23 +48,23 @@
     "typescript": "4.9.4"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.0-beta.24",
-    "@storybook/addon-interactions": "^7.0.0-beta.24",
-    "@storybook/addon-links": "^7.0.0-beta.24",
-    "@storybook/blocks": "^7.0.0-beta.24",
-    "@storybook/builder-webpack5": "^7.0.0-beta.24",
-    "@storybook/jest": "^0.0.10",
+    "@storybook/addon-essentials": "^7.0.0-beta.25",
+    "@storybook/addon-interactions": "^7.0.0-beta.25",
+    "@storybook/addon-links": "^7.0.0-beta.25",
+    "@storybook/blocks": "^7.0.0-beta.25",
+    "@storybook/builder-webpack5": "^7.0.0-beta.25",
+    "@storybook/jest": "^0.0.11-next.0",
     "@storybook/manager-webpack5": "^6.5.15",
-    "@storybook/nextjs": "^7.0.0-beta.24",
-    "@storybook/react": "^7.0.0-beta.24",
+    "@storybook/nextjs": "^7.0.0-beta.25",
+    "@storybook/react": "^7.0.0-beta.25",
     "@storybook/test-runner": "^0.9.2",
-    "@storybook/testing-library": "^0.0.13",
+    "@storybook/testing-library": "^0.0.14-next.1",
     "@types/leaflet": "^1.9.0",
     "chromatic": "^6.14.0",
     "eslint-plugin-storybook": "^0.6.10",
     "msw": "^0.49.2",
     "msw-storybook-addon": "^1.6.3",
-    "storybook": "^7.0.0-beta.24",
+    "storybook": "^7.0.0-beta.25",
     "webpack": "^5.75.0"
   },
   "msw": {
