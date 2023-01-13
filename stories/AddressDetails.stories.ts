@@ -27,9 +27,7 @@ export const Filled: Story = {
 };
 
 export const NoAddress: Story = {
-  args: {
-    address: null,
-  },
+  args: { error: { code: "500", message: "Mocked error" } },
 };
 export const Loading: Story = {
   args: {},

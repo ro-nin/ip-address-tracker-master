@@ -1,5 +1,6 @@
 import { LatLngTuple, LatLngExpression } from 'leaflet';
 import React from 'react'
+import { GeoLocErrorType, GeoLocResultType } from '../sharedLogic/geolocate';
 import styles from '../styles/Stories.module.css'
 
 export type AddressDataType = {
@@ -14,14 +15,15 @@ interface AddressDetailsProps {
     /**
      * Address data to show
      */
-    address: AddressDataType | undefined | null;
-
+    address?: AddressDataType;
+    error?: GeoLocErrorType;
 
 }
 /**
  * A container for the address various parts
  */
-const AddressDetails = ({ address: addressData }: AddressDetailsProps) => {
+const AddressDetails = ({ address, error }: AddressDetailsProps) => {
+
     return (
         <div className={styles.addressContainer}>
             <div className={styles.addressSection}>
@@ -29,7 +31,7 @@ const AddressDetails = ({ address: addressData }: AddressDetailsProps) => {
                     IP ADRRESS
                 </label>
                 <p className={styles.addressValue}>
-                    {addressData === null ? '/' : addressData === undefined ? 'searching' : addressData.ipAddress}</p>
+                    {address?.ipAddress}</p>
             </div>
             <div className={styles.separator}></div>
             <div className={styles.addressSection}>
@@ -37,7 +39,7 @@ const AddressDetails = ({ address: addressData }: AddressDetailsProps) => {
                     LOCATION
                 </label>
                 <p className={styles.addressValue}>
-                    {addressData?.location}
+                    {address?.location}
                 </p>
             </div>
             <div className={styles.separator}></div>
@@ -46,7 +48,7 @@ const AddressDetails = ({ address: addressData }: AddressDetailsProps) => {
                     TIMEZONE
                 </label>
                 <p className={styles.addressValue}>
-                    {addressData?.timezone}
+                    {address?.timezone}
                 </p>
             </div>
             <div className={styles.separator}></div>
@@ -55,7 +57,7 @@ const AddressDetails = ({ address: addressData }: AddressDetailsProps) => {
                     ISP
                 </label>
                 <p className={styles.addressValue}>
-                    {addressData?.isp}
+                    {address?.isp}
                 </p>
             </div>
         </div>
