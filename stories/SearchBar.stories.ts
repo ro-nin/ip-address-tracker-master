@@ -9,7 +9,7 @@ const meta: Meta<typeof SearchBar> = {
   title: "SearchBar",
   component: SearchBar,
   tags: ["autodocs"],
-  argTypes: {},
+  // argTypes: {},
 };
 
 export default meta;

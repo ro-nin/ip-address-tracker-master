@@ -14,7 +14,7 @@ const meta: Meta<typeof MapView> = {
   title: "MapView",
   component: MapView,
   tags: ["autodocs"],
-  argTypes: {},
+  // argTypes: {},
 };
 
 export default meta;

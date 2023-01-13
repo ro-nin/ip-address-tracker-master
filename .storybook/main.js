@@ -9,6 +9,12 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
   ],
+  "features": {
+    "interactionsDebugger": true,
+  },
+  "core": {
+    "builder": "@storybook/builder-webpack5",
+  },
   "framework": {
     "name": "@storybook/nextjs",
     "options": {}

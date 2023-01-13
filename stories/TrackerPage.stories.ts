@@ -2,6 +2,8 @@ import { Meta, StoryObj } from "@storybook/react";
 import { AddressDataType } from "./AddressDetails";
 import TrackerPage from "./TrackerPage";
 import { rest } from "msw";
+import { within, userEvent } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 
 const defaultAddress: AddressDataType = {
   ipAddress: "192.212.174.101",
@@ -10,22 +12,23 @@ const defaultAddress: AddressDataType = {
   isp: "SpaceX Starlink",
   latLon: [37.38605, -122.08385],
 };
-
 const meta: Meta<typeof TrackerPage> = {
   title: "TrackerPage",
   component: TrackerPage,
   tags: ["autodocs"],
-  argTypes: {},
+  // argTypes: {},
 };
-
 export default meta;
 type Story = StoryObj<typeof TrackerPage>;
-
 export const WithAddress: Story = {
   args: {
     initialAddress: defaultAddress,
   },
+  // play: async ({ canvasElement }) => {
+  //   const canvas = within(canvasElement); //error causing line
+  // },
 };
+
 export const UnreachableGeolocAPI: Story = {
   args: {
     initialAddress: null,
@@ -40,7 +43,6 @@ export const UnreachableGeolocAPI: Story = {
     },
   },
 };
-
 export const PendingGeolocation: Story = {
   args: {
     initialAddress: undefined,

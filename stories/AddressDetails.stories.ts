@@ -14,7 +14,7 @@ const meta: Meta<typeof AddressDetails> = {
   title: "AddressDetails",
   component: AddressDetails,
   tags: ["autodocs"],
-  argTypes: {},
+  // argTypes: {},
 };
 
 export default meta;
