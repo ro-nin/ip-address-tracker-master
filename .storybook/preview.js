@@ -3,7 +3,7 @@ import '../styles/globals.css'
 
 initialize({
   serviceWorker: {
-    url: 'http://localhost:6006/mockServiceWorker.js'
+    url: '/mockServiceWorker.js'
   }
 });
 

@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=7d81b100fc9b"
   },
   "dependencies": {
     "@next/font": "13.1.1",
@@ -35,6 +36,7 @@
     "@storybook/testing-library": "^0.0.13",
     "@types/leaflet": "^1.9.0",
     "autoprefixer": "^10.4.13",
+    "chromatic": "^6.14.0",
     "eslint-plugin-storybook": "^0.6.10",
     "msw": "^0.49.2",
     "msw-storybook-addon": "^1.6.3",
@@ -43,5 +45,7 @@
   },
   "msw": {
     "workerDirectory": "public"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "ip-address-tracker-master@0.1.0"
 }
