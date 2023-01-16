@@ -28,7 +28,7 @@ export const WithAddress: Story = {
 
 export const NoAddress: Story = {
   args: {
-    address: null,
+    
   },
 };
 export const Loading: Story = {
