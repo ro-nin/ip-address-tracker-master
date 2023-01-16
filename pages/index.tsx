@@ -38,9 +38,14 @@ export default function Home(props: { dataFromServer: GeoLocResultType }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <header style={{ display: "flex", justifyContent: 'center', gap: '2em' }}>
+        <a href='https://63c110e16d586aa9c3917d82-xjtniqjedm.chromatic.com/'> View StoryBook</a>
+        <a href='https://github.com/ro-nin/ip-address-tracker-master'> Source</a>
+      </header>
       <main >
         <DynamicMap initialAddress={props.dataFromServer} />
       </main>
+
     </>
   )
 }
