@@ -49,7 +49,7 @@ const TrackerPage = ({ initialAddress }: TrackerPageProps) => {
                     </div>
                     <AddressDetails address={address} error={error} />
                 </div>
-                <MapView address={address} />
+                <MapView address={address} error={error} />
             </div>
 
         </>
