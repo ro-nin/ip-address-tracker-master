@@ -23,6 +23,7 @@ interface AddressDetailsProps {
  * A container for the address various parts
  */
 const AddressDetails = ({ address, error }: AddressDetailsProps) => {
+    const isLoading = (address === undefined) && !error;
 
     return (
         <div className={styles.addressContainer}>
@@ -30,35 +31,43 @@ const AddressDetails = ({ address, error }: AddressDetailsProps) => {
                 <label className={styles.addressLabel}>
                     IP ADRRESS
                 </label>
-                <p className={styles.addressValue}>
-                    {address?.ipAddress}</p>
+                {!isLoading && <p className={styles.addressValue}>
+                    {address?.ipAddress}
+                </p>}
+                {isLoading && <div className={"skeleton skeleton-text addressValue"} />}
             </div>
             <div className={styles.separator}></div>
             <div className={styles.addressSection}>
                 <label className={styles.addressLabel}>
                     LOCATION
                 </label>
-                <p className={styles.addressValue}>
+                {!isLoading && <p className={styles.addressValue}>
                     {address?.location}
-                </p>
+                </p>}
+                {isLoading && <div className={"skeleton skeleton-text addressValue"} />}
+
             </div>
             <div className={styles.separator}></div>
             <div className={styles.addressSection}>
                 <label className={styles.addressLabel}>
                     TIMEZONE
                 </label>
-                <p className={styles.addressValue}>
+                {!isLoading && <p className={styles.addressValue}>
                     {address && `UTC ${address?.timezone}`}
-                </p>
+                </p>}
+                {isLoading && <div className={"skeleton skeleton-text addressValue"} />}
+
             </div>
             <div className={styles.separator}></div>
             <div className={styles.addressSection}>
                 <label className={styles.addressLabel}>
                     ISP
                 </label>
-                <p data-testid="ISPValue" className={styles.addressValue}>
+                {!isLoading && <p data-testid="ISPValue" className={styles.addressValue}>
                     {address?.isp}
-                </p>
+                </p>}
+                {isLoading && <div className={"skeleton skeleton-text addressValue"} />}
+
             </div>
         </div>
     )
