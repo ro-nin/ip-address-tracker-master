@@ -2,6 +2,8 @@
   position: relative;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .topoBGContainer {
@@ -99,7 +101,6 @@
   padding: 2em;
   text-align: left;
   min-width: 8em;
-  
 }
 
 @media only screen and (max-width: 1000px) {
