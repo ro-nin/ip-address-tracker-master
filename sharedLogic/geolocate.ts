@@ -5,7 +5,14 @@ export type GeoLocResultType = {
   error?: GeoLocErrorType;
 };
 
-//mock error from server
+const ServerException = (
+  message: string,
+  code: number
+): { message: string; code: number } => {
+  return { message: message, code: code };
+};
+
+//error response type from geoIpify
 export type GeoLocErrorType = {
   code: string;
   message: string;
@@ -20,18 +27,11 @@ export default async function geolocateAddress(
     ipToLocate ? "&ipAddress=" + ipToLocate : ""
   }`;
   return fetch(geoLocateIpQuery)
-    .then((res) => {
-      if (res.ok) return res.json();
-      else {
-        throw new Error(res.statusText);
-      }
-    })
-
+    .then((res) => res.json())
     .then((data) => {
-      if (data.code !== undefined) {
-        console.log(data.code, data.message);
-
-        return { error: { code: data.code ?? "500", message: data.message } };
+      console.log(data);
+      if (data.code) {
+        throw ServerException(data.messages, data.code);
       }
       const address: AddressDataType = {
         ipAddress: data.ip,
