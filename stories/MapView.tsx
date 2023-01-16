@@ -5,7 +5,16 @@ import 'leaflet/dist/leaflet.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 import "leaflet-defaulticon-compatibility";
 import { MapContainer, Marker, Popup, TileLayer, } from 'react-leaflet'
+import Leaflet from 'leaflet'
 import { GeoLocErrorType } from "../sharedLogic/geolocate";
+
+export const newicon = new Leaflet.Icon({
+    iconUrl: "/icon-location.svg",
+    iconAnchor: [5, 55],
+    popupAnchor: [10, -44],
+    // iconSize: [25, 45]
+});
+
 interface MapProps {
     /**
      * Addres information to populate the map
@@ -27,7 +36,7 @@ const MapView = ({ address, error }: MapProps) => {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                {!error && address && <Marker position={address?.latLon ?? [0, 0]}>
+                {!error && address && <Marker icon={newicon} position={address?.latLon ?? [0, 0]}>
                     {/* <Popup>
                         A pretty CSS3 popup. <br /> Easily customizable.
                     </Popup> */}
