@@ -29,7 +29,6 @@ export default async function geolocateAddress(
   return fetch(geoLocateIpQuery)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       if (data.code) {
         throw ServerException(data.messages, data.code);
       }

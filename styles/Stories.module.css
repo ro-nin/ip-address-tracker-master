@@ -1,21 +1,16 @@
 .trackerPageContainer {
-  justify-content: start;
-  display: flex;
-  flex-direction: column;
   position: relative;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .topoBGContainer {
   height: 12rem;
   background-image: url("/pattern-bg.png");
   background-size: cover;
-  display: flex;
-  justify-content: center;
 }
-
-
 
 .overlayContainer {
   position: absolute;
@@ -23,10 +18,14 @@
   flex-direction: column;
   z-index: 100;
   align-items: center;
-  width: 100%;
+  justify-content: center;
+  width: 100vw;
   top: 1.5em;
-  /* max-height: 40vh; */
   gap: 1em;
+}
+
+.overlayContainer > * {
+  max-width: 80vw;
 }
 
 .errorPadding {
@@ -60,7 +59,6 @@
 .searchBarContainer {
   display: flex;
   width: 100%;
-  max-width: 80vw;
   justify-content: center;
 }
 
@@ -78,7 +76,7 @@
   display: grid;
   background: white;
   border-radius: var(--borderRadiusDefault);
-  max-width: 80vw;
+  width: 80vw;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -103,7 +101,6 @@
   padding: 2em;
   text-align: left;
   min-width: 8em;
-  max-width: 16em;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -142,7 +139,7 @@
   font-size: var(--defaultFontSize);
 }
 
-@media only screen and (max-width: 1000px) {
+/* @media only screen and (max-width: 1000px) {
   .addressLabel {
     font-size: 0.5rem;
   }
@@ -150,7 +147,7 @@
   .addressValue {
     font-size: 1rem;
   }
-}
+} */
 
 .mapViewContainer {
   height: 400px;
