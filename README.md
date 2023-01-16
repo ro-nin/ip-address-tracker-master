@@ -1,6 +1,6 @@
 # Frontend Mentor - IP address tracker solution
 
-This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0).
 
 
 ## Table of contents
@@ -16,6 +16,7 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
   - [My process](#my-process)
     - [Built with](#built-with)
     - [Continued development](#continued-development)
+    - [Known issues](#known-issues)
   - [Author](#author)
 - [Execution](#execution)
   - [Available Scripts](#available-scripts)
@@ -41,12 +42,12 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Source]()
-- Storybook Deployment: [View Storybook Deploy]()
-- Live Site URL: [View Site Deploy]()
+<!-- - Solution URL: [Source]() -->
+- Storybook Deployment: [View Storybook Deploy](https://63c110e16d586aa9c3917d82-xjtniqjedm.chromatic.com/)
+- Live Site URL: [View Site Deploy](https://ip-address-tracker-master-lake.vercel.app/)
 
 ## My process
-This project was bootstrapped with [nextjs storybook template](https://storybook.js.org/blog/integrate-nextjs-and-storybook-automatically/). Stories describes the components possible states while the user interacts with it. Accessibility was assessed with storybook-addon-a11y and basic interactions test are provided, using the mock-service-worker addon (for mocking http requests), jest and Testing Library.
+This project was bootstrapped with [nextjs storybook template](https://storybook.js.org/blog/integrate-nextjs-and-storybook-automatically/). Accessibility was assessed with storybook-addon-a11y and basic interactions test are provided, using the mock-service-worker addon (for mocking http requests), jest and Testing Library.
 
 ### Built with
 
@@ -59,6 +60,9 @@ This project was bootstrapped with [nextjs storybook template](https://storybook
 - better error display
 - custom API key
 
+### Known issues
+
+- On initial page load the IP tracked it's the wrong one (cause: nextjs getServerSideProps, move to useEffect and make it a client side request)
 ## Author
 
 - Website - [Portfolio](https://emkorp.vercel.app)

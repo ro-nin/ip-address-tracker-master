@@ -28,7 +28,7 @@ export const WithAddress: Story = {
 
 export const NoAddress: Story = {
   args: {
-    
+    error: { code: "500", message: "Mocked error" },
   },
 };
 export const Loading: Story = {
