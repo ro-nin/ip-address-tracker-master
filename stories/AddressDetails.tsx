@@ -48,7 +48,7 @@ const AddressDetails = ({ address, error }: AddressDetailsProps) => {
                     TIMEZONE
                 </label>
                 <p className={styles.addressValue}>
-                    {address?.timezone}
+                    {address && `UTC ${address?.timezone}`}
                 </p>
             </div>
             <div className={styles.separator}></div>

@@ -86,13 +86,13 @@ export const EmptyToSuccess: Story = {
     console.log(canvas);
     await userEvent.type(
       canvas.getByTestId("inputText"),
-      "8.8.8.8"
-      //  {
-      //   delay: 10,
-      // }
+      "8.8.8.8",
+       {
+        delay: 10,
+      }
     );
     await userEvent.click(canvas.getByTestId("button"));
-    await sleep(500);
+    await sleep(1000);
     await expect(canvas.getByTestId("ISPValue")).toHaveTextContent(
       "Google LLC"
     );

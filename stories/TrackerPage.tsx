@@ -34,17 +34,12 @@ const TrackerPage = ({ initialAddress }: TrackerPageProps) => {
     }
     return (
         <>
-            <div style={{ justifyContent: 'center', display: 'flex', flexDirection: 'column', position: 'relative', width: '100vw', height: '100vh' }}>
-                <div className={styles.topoBGContainer}>
-                    <h1>IP Addres Tracker</h1>
-                </div>
+            <div className={styles.trackerPageContainer}>
+                <div className={styles.topoBGContainer} />
                 <div className={styles.overlayContainer}>
+                    <h1>IP Addres Tracker</h1>
                     <SearchBar value={searchBarValue} handleChange={setSearchBarValue} onClick={triggerGeolocation} />
-                    <div style={{
-                        height: '6em'
-                        ,
-                        margin: "0.5em 0"
-                    }}>
+                    <div className={styles.errorPadding}>
                         {error && <div className={styles.errorContainer}>
                             <p>{error?.code ?? ''}</p>
                             <p>{': '}</p>
