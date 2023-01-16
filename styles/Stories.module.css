@@ -1,3 +1,12 @@
+.trackerPageContainer {
+  justify-content: start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
 .topoBGContainer {
   height: 12rem;
   background-image: url("/pattern-bg.png");
@@ -6,23 +15,37 @@
   justify-content: center;
 }
 
-.topoBGContainer h1 {
+h1 {
   color: white;
   font-size: var(--defaultFontSize);
-  margin-top: 1.5rem;
+  font-size: 400;
 }
 
 .overlayContainer {
   position: absolute;
-  top: 6rem;
   display: flex;
   flex-direction: column;
   z-index: 100;
-  justify-content: center;
   align-items: center;
   width: 100%;
-  max-height: 40vh;
-  /* gap: 1rem; */
+  top: 1.5em;
+  /* max-height: 40vh; */
+  gap: 1em;
+}
+
+.errorPadding {
+  margin: 0.1em 0;
+}
+.errorContainer {
+  background-color: white;
+  padding: 0 0.2em;
+  border-radius: var(--borderRadiusDefault);
+}
+
+.errorContainer > * {
+  color: red;
+  font-size: 0.8em;
+  display: inline;
 }
 
 .searchBarInput {
@@ -114,13 +137,13 @@
 }
 
 .addressLabel {
-  color: gray;
+  color: var(--accessibleGray);
   font-size: var(--smallerFontSize);
 }
 
 .addressValue {
   color: black;
-  font-size: var(--biggerFontSize);
+  font-size: var(--defaultFontSize);
 }
 
 @media only screen and (max-width: 1000px) {
@@ -140,16 +163,4 @@
   display: flex;
   flex-grow: 1;
   z-index: 1;
-}
-
-.errorContainer {
-  background-color: white;
-  padding: 0 1em;
-  border-radius: var(--borderRadiusDefault);
-}
-
-.errorContainer > * {
-  color: red;
-  font-size: 0.8em;
-  display: inline;
 }

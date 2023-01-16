@@ -4,9 +4,10 @@
   --borderRadiusDefault: 0.5rem;
   --inputPaddingY: 0.63rem;
   --inputPaddingX: 0.88rem;
-  --defaultFontSize: 1.13rem;
+  --defaultFontSize: 1rem;
   --biggerFontSize: 1.5rem;
-  --smallerFontSize: 0.88rem;
+  --smallerFontSize: 0.75rem;
+  --accessibleGray: #4f4f4f;
 
   font-size: var(--defaultFontSize);
 }
