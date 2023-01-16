@@ -56,7 +56,7 @@ const AddressDetails = ({ address, error }: AddressDetailsProps) => {
                 <label className={styles.addressLabel}>
                     ISP
                 </label>
-                <p className={styles.addressValue}>
+                <p data-testid="ISPValue" className={styles.addressValue}>
                     {address?.isp}
                 </p>
             </div>

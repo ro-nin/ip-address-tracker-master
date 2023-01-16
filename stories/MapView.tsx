@@ -13,7 +13,6 @@ interface MapProps {
 }
 
 const MapView = ({ address, }: MapProps) => {
-
     return (
         <div className={styles.mapViewContainer}>
             {!address?.ipAddress ?? 'no address'}

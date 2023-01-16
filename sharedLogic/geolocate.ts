@@ -28,7 +28,6 @@ export default async function geolocateAddress(
     })
 
     .then((data) => {
-      console.log(data, "reached then");
       if (data.code !== undefined) {
         console.log(data.code, data.message);
 
