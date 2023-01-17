@@ -45,10 +45,10 @@ const AddressDetails = ({ address, error }: AddressDetailsProps) => {
             {sections.map((section, index) => {
                 return <div className={styles.dataDisplayerBlock} key={`section-${section.label}`}>
                     <div className={styles.addressSection}>
-                        <label className={styles.addressLabel}>
+                        <label id={`${section.label}`} className={styles.addressLabel}>
                             {section.label}
                         </label>
-                        {!isLoading && <p className={styles.addressValue}>
+                        {!isLoading && <p aria-labelledby={`${section.label}`} className={styles.addressValue}>
                             {section.value}
                         </p>}
                         {isLoading && <div className={"skeleton skeleton-text addressValue"} />}
