@@ -34,11 +34,8 @@ const AddressDetails = ({ address, error }: AddressDetailsProps) => {
         { label: 'IP ADDRESS', value: address?.ipAddress },
         { label: "LOCATION", value: address?.location },
         { label: "TIMEZONE", value: address && `UTC ${address?.timezone}` },
-        { label: "ISP", value: "gaeeageageagaegeageagea" },
-        { label: "IS2", value: address?.isp },
-        { label: "IS3", value: "32525grwgrwgw" },
-        { label: "IS35", value: "" },
-        { label: "IS352", value: address?.isp },
+        { label: "ISP", value: address?.isp },
+
     ]
 
     const len = sections.length
