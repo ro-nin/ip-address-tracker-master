@@ -82,28 +82,23 @@
 
 @media only screen and (min-width: 500px) {
   .dataDisplayerContainer {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
 
 .dataDisplayerBlock {
   display: grid;
-  grid-template-columns: 1fr 1px;
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  position: relative;
 }
 
 @media only screen and (min-width: 500px) {
-  .dataDisplayerBlock ~ .dataDisplayerBlock:not(:nth-child(5n)):before {
-    content: "";
-    position: absolute;
-    padding: 1em 0;
-    height: 100%;
-    width: 1px;
-    background: #000;
+  .dataDisplayerBlock ~ .dataDisplayerBlock:not(:nth-child(5n)) {
+    /* TODO not working with auto column resize if column ==3 */
+    border-left: 1px solid lightgray;
+    margin: 0.8em 0;
   }
 }
-
 .addressSection {
   display: flex;
   gap: 0.5em;
@@ -111,7 +106,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  padding: 2em;
+  padding: 1.5em;
   overflow: clip;
   overflow-wrap: break-word;
 }
