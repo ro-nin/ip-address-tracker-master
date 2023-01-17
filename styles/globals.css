@@ -65,3 +65,10 @@ body {
   margin-bottom: 0.5rem;
   border-radius: 0.25rem;
 }
+.skeleton-text-small {
+  width: 80%;
+}
+
+.errorBg {
+  background-color: red;
+}

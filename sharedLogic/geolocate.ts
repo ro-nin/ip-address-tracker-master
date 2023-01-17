@@ -1,4 +1,4 @@
-import { AddressDataType } from "../stories/AddressDetails";
+import { AddressDataType } from "./AddressDataType";
 
 export type GeoLocResultType = {
   address?: AddressDataType;

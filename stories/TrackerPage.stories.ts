@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { AddressDataType } from "./AddressDetails";
+import { AddressDataType } from "../sharedLogic/AddressDataType";
 import TrackerPage from "./TrackerPage";
 import { rest } from "msw";
 import { within, userEvent, screen } from "@storybook/testing-library";

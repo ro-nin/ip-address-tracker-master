@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { AddressDataType } from './AddressDetails'
+import { AddressDataType } from "../sharedLogic/AddressDataType";
 import styles from '../styles/Stories.module.css'
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'

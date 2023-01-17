@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { AddressDataType } from "./AddressDetails";
+import { AddressDataType } from "../sharedLogic/AddressDataType";
 import MapView from "./MapView";
 
 const defaultAddress: AddressDataType = {
