@@ -12,7 +12,7 @@ const defaultAddress: AddressDataType = {
 };
 
 const meta: Meta<typeof DataDisplayer> = {
-  title: "AddressDetails",
+  title: "DataDisplayer",
   component: DataDisplayer,
   tags: ["autodocs"],
   // argTypes: {},
