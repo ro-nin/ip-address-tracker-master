@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 // import { Rubik } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-import { AddressDataType } from '../stories/AddressDetails'
+import { AddressDataType } from "../sharedLogic/AddressDataType";
 import 'leaflet/dist/leaflet.css';
 
 // not used, use css to provide font also to storybook

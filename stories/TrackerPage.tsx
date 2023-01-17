@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import geolocateAddress, { GeoLocErrorType, GeoLocResultType } from '../sharedLogic/geolocate'
-import AddressDetails, { AddressDataType } from './AddressDetails'
+import DataDisplayer, { DataSectionType } from './DataDisplayer'
+import { AddressDataType } from "../sharedLogic/AddressDataType"
 import MapView from './MapView'
 import { SearchBar } from './SearchBar'
 import styles from '../styles/Stories.module.css'
@@ -32,6 +33,17 @@ const TrackerPage = ({ initialAddress }: TrackerPageProps) => {
         setError(errorFromServer)
 
     }
+
+    const sections: Array<DataSectionType> | null | undefined = address ? [
+        { label: "IP ADDRESS", value: address?.ipAddress },
+        { label: "LOCATION", value: address?.location },
+        {
+            label: "TIMEZONE",
+            value: address && `UTC ${address?.timezone}`,
+        },
+        { label: "ISP", value: address?.isp },
+    ] : error ? null : undefined;
+
     return (
         <>
             <div className={styles.trackerPageContainer}>
@@ -47,7 +59,7 @@ const TrackerPage = ({ initialAddress }: TrackerPageProps) => {
                         </div>
                         }
                     </div>
-                    <AddressDetails address={address} error={error} />
+                    <DataDisplayer data={sections} />
                 </div>
                 <MapView address={address} error={error} />
             </div>

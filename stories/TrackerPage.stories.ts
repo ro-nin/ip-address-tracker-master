@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { AddressDataType } from "./AddressDetails";
+import { AddressDataType } from "../sharedLogic/AddressDataType";
 import TrackerPage from "./TrackerPage";
 import { rest } from "msw";
 import { within, userEvent, screen } from "@storybook/testing-library";
@@ -93,7 +93,7 @@ export const EmptyToSuccess: Story = {
     );
     await userEvent.click(canvas.getByTestId("button"));
     await sleep(1000);
-    await expect(canvas.getByLabelText("ISP")).toHaveTextContent(
+    await expect(canvas.getByTestId("ISP")).toHaveTextContent(
       "Google LLC"
     );
   },
