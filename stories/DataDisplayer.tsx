@@ -36,10 +36,9 @@ const DataDisplayer = ({ data, empties = 4 }: DataDisplayerProps) => {
                         <label id={`${section.label}`} className={styles.addressLabel}>
                             {section.label}
                         </label>
-                        {!isLoading && <p aria-labelledby={`${section.label}`} className={styles.addressValue}>
+                        <p data-testid={`${section.label}`} className={styles.addressValue}>
                             {section.value}
-                        </p>}
-                        {isLoading && <div className={"skeleton skeleton-text addressValue"} />}
+                        </p>
                     </div>
                     {index < len! - 1 && <div key={'separator' + index} className={styles.separator}></div>}
 

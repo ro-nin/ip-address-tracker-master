@@ -93,7 +93,7 @@ export const EmptyToSuccess: Story = {
     );
     await userEvent.click(canvas.getByTestId("button"));
     await sleep(1000);
-    await expect(canvas.getByLabelText("ISP")).toHaveTextContent(
+    await expect(canvas.getByTestId("ISP")).toHaveTextContent(
       "Google LLC"
     );
   },
