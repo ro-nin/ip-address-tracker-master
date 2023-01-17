@@ -11,16 +11,6 @@ const defaultAddress: AddressDataType = {
   latLon: [37.38605, -122.08385],
 };
 
-const sections: Array<DataSectionType> = [
-  { label: "IP ADDRESS", value: defaultAddress?.ipAddress },
-  { label: "LOCATION", value: defaultAddress?.location },
-  {
-    label: "TIMEZONE",
-    value: defaultAddress && `UTC ${defaultAddress?.timezone}`,
-  },
-  { label: "ISP", value: defaultAddress?.isp },
-];
-
 const meta: Meta<typeof DataDisplayer> = {
   title: "AddressDetails",
   component: DataDisplayer,
@@ -31,9 +21,41 @@ const meta: Meta<typeof DataDisplayer> = {
 export default meta;
 type Story = StoryObj<typeof DataDisplayer>;
 
-export const WithData: Story = {
+const sections: Array<DataSectionType> = [
+  { label: "IP ADDRESS", value: defaultAddress?.ipAddress },
+  { label: "LOCATION", value: defaultAddress?.location },
+  {
+    label: "TIMEZONE",
+    value: defaultAddress && ` ${defaultAddress?.timezone}`,
+  },
+  { label: "ISP", value: defaultAddress?.isp },
+  { label: "Placeholder#1", value: defaultAddress?.ipAddress },
+  { label: "Placeholder#2", value: defaultAddress?.location },
+  {
+    label: "Placeholder#3",
+    value: defaultAddress && `${defaultAddress?.timezone}`,
+  },
+  { label: "Placeholder#4", value: defaultAddress?.isp },
+];
+
+export const WithFourSections: Story = {
+  args: {
+    data: sections.slice(0, 4),
+  },
+};
+export const WithEightSections: Story = {
   args: {
     data: sections,
+  },
+};
+export const WithOddSections: Story = {
+  args: {
+    data: sections.slice(0, 3),
+  },
+};
+export const WithOddSectionsMultipleRow: Story = {
+  args: {
+    data: sections.slice(0, 5),
   },
 };
 
