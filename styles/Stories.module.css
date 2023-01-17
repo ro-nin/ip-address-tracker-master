@@ -75,17 +75,14 @@
 .dataDisplayerContainer {
   background: white;
   border-radius: var(--borderRadiusDefault);
-  width: 80vw;
+
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (min-width: 500px) {
   .dataDisplayerContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
@@ -93,22 +90,12 @@
   display: grid;
   grid-template-columns: 1fr 1px;
   grid-template-rows: 1fr;
-  min-width: 10em;
-  max-width: 20em;
-  max-height: 12em;
-  min-height: 6em;
-}
-
-@media only screen and (max-width: 1000px) {
-  .dataDisplayerBlock {
-    min-width: 4em;
-    min-height: 3em;
-
-  }
 }
 
 
 .addressSection {
+  display: flex;
+  gap: 0.5em;
   text-align: left;
   flex-direction: column;
   justify-content: center;
@@ -116,8 +103,6 @@
   padding: 2em;
   overflow: clip;
   overflow-wrap: break-word;
-
-
 }
 
 @media only screen and (max-width: 1000px) {
