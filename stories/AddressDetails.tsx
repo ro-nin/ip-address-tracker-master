@@ -34,16 +34,20 @@ const AddressDetails = ({ address, error }: AddressDetailsProps) => {
         { label: 'IP ADDRESS', value: address?.ipAddress },
         { label: "LOCATION", value: address?.location },
         { label: "TIMEZONE", value: address && `UTC ${address?.timezone}` },
-        { label: "ISP", value: address?.isp },
+        { label: "ISP", value: "gaeeageageagaegeageagea" },
+        { label: "IS2", value: address?.isp },
+        { label: "IS3", value: "32525grwgrwgw" },
+        { label: "IS35", value: "" },
+        { label: "IS352", value: address?.isp },
     ]
 
     const len = sections.length
     return (
 
-        <div className={styles.addressContainer}>
+        <div className={styles.dataDisplayerContainer}>
             {sections.map((section, index) => {
-                return <>
-                    <div key={`section-${address?.ipAddress}`} className={styles.addressSection}>
+                return <div className={styles.dataDisplayerBlock} key={`section-${section.label}`}>
+                    <div className={styles.addressSection}>
                         <label className={styles.addressLabel}>
                             {section.label}
                         </label>
@@ -54,7 +58,7 @@ const AddressDetails = ({ address, error }: AddressDetailsProps) => {
                     </div>
                     {index < len - 1 && <div key={'separator' + index} className={styles.separator}></div>}
 
-                </>
+                </div>
             }
             )}
 
