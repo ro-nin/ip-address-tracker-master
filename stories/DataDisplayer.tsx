@@ -40,7 +40,7 @@ const DataDisplayer = ({ data, empties = 4 }: DataDisplayerProps) => {
                             {section.value}
                         </p>
                     </div>
-                    {index < len! - 1 && <div key={'separator' + index} className={styles.separator}></div>}
+                    {/* {index < len! - 1 && <div key={'separator' + index} className={styles.separator}></div>} */}
 
                 </div>
             }
@@ -51,7 +51,6 @@ const DataDisplayer = ({ data, empties = 4 }: DataDisplayerProps) => {
                         {<div className={"skeleton skeleton-text addressLabel skeleton-text-small "} />}
                         {<div className={"skeleton skeleton-text addressValue"} />}
                     </div>
-                    {index < len! - 1 && <div key={'separator' + index} className={styles.separator}></div>}
                 </div>
             }
             )}
@@ -61,7 +60,6 @@ const DataDisplayer = ({ data, empties = 4 }: DataDisplayerProps) => {
                         {<div className={" errorBg skeleton-text addressLabel skeleton-text-small "} />}
                         {<div className={" errorBg skeleton-text addressValue"} />}
                     </div>
-                    {index < len! - 1 && <div key={'separator' + index} className={styles.separator}></div>}
                 </div>
             }
             )}

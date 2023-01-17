@@ -90,8 +90,19 @@
   display: grid;
   grid-template-columns: 1fr 1px;
   grid-template-rows: 1fr;
+  position: relative;
 }
 
+@media only screen and (min-width: 500px) {
+  .dataDisplayerBlock ~ .dataDisplayerBlock:not(:nth-child(5n)):before {
+    content: "";
+    position: absolute;
+    padding: 1em 0;
+    height: 100%;
+    width: 1px;
+    background: #000;
+  }
+}
 
 .addressSection {
   display: flex;
@@ -113,6 +124,7 @@
     text-align: center;
   }
 }
+
 @media only screen and (min-width: 1001px) {
   .separator {
     display: inline;
